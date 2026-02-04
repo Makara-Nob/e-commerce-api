@@ -73,9 +73,9 @@ app:
   default-users:
     create: true
   super:
-    username: rong
+    username: makara
     password: 88889999
-    email: chomrong.me@gmail.com
+    email: makara@gmail.com
 
   data-load:
     batch-size: 1000
