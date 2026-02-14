@@ -16,6 +16,7 @@ public interface AuthMapper {
     @Mapping(source = "email", target = "email")
     @Mapping(source = "status", target = "userStatus", qualifiedByName = "mapStatus")
     @Mapping(source = "roles", target = "userRole", qualifiedByName = "rolesToRoleString")
+    @Mapping(source = "profileUrl", target = "profileUrl")
     UserResponseDto userToUserResponseDto(UserEntity user);
 
     @Named("mapStatus")

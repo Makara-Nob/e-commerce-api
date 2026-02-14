@@ -21,4 +21,6 @@ public interface AuthService {
     List<Map<String, Object>> getAvailableRoles();
 
     boolean validateToken();
+
+    UserResponseDto getProfile();
 }

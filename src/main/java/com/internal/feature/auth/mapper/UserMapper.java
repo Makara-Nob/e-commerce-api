@@ -21,6 +21,8 @@ public interface UserMapper {
     @Mapping(source = "roles", target = "userRole", qualifiedByName = "mapRoles")
     @Mapping(source = "createdAt", target = "createdAt")
     @Mapping(source = "updatedAt", target = "updatedAt")
+    @Mapping(source = "phone", target = "phone")
+    @Mapping(source = "profileUrl", target = "profileUrl")
     UserResponseDto mapToDto(UserEntity user);
 
     @Named("mapToListDto")

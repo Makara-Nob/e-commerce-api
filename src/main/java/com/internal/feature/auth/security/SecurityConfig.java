@@ -39,6 +39,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/v1/enum/**").permitAll()
                         .requestMatchers("/api/images/**").permitAll()
+                        .requestMatchers("/uploads/**").permitAll()
                         .requestMatchers("/api/v1/staff/**").hasAnyAuthority("STAFF", "ADMIN")
                         .requestMatchers("/api/v1/public/**").permitAll()
                         .requestMatchers("/api/v1/public/brands/**").permitAll()

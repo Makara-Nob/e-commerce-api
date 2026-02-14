@@ -23,6 +23,8 @@ public class UserEntity extends BaseEntity {
     private String email;
 
     private String password;
+    
+    private String phone;
 
     private String fullName;
 

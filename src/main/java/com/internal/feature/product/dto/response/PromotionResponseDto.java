@@ -23,6 +23,7 @@ public class PromotionResponseDto {
     private LocalDateTime endDate;
     private Long productId;
     private String productName;
+    private ProductResponseDto product; // Full product details
     private String status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

@@ -12,5 +12,6 @@ public class UpdateUserRequestDto {
     private StatusData status;
     private String profileUrl;
     private String position;
+    private String phone;
     private UserPermission userPermission;
 }

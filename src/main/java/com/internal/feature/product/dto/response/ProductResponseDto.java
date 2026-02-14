@@ -3,6 +3,7 @@ package com.internal.feature.product.dto.response;
 import com.internal.enumation.StatusData;
 import com.internal.feature.inventory.dto.response.CategoryDTO;
 import com.internal.feature.supplier.dto.response.SupplierResponseDto;
+import com.internal.feature.product.dto.response.ProductVariantResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,4 +33,5 @@ public class ProductResponseDto {
     private LocalDateTime updatedAt;
     private String createdBy;
     private String updatedBy;
+    private java.util.List<ProductVariantResponseDto> variants;
 }

@@ -46,7 +46,10 @@ public class ProductServiceImpl implements ProductService {
 
         Specification<Product> spec = Specification
                 .where(ProductSpecification.search(requestDto.getSearch()))
-                .and(ProductSpecification.hasStatus(requestDto.getStatus()));
+                .and(ProductSpecification.hasStatus(requestDto.getStatus()))
+                .and(ProductSpecification.hasCategory(requestDto.getCategoryId()))
+                .and(ProductSpecification.hasBrand(requestDto.getBrandId()))
+                .and(ProductSpecification.hasPriceRange(requestDto.getMinPrice(), requestDto.getMaxPrice()));
 
         Pageable pageable = PageRequest.of(requestDto.getPageNo() - 1, requestDto.getPageSize(),
                 Sort.by(Sort.Direction.DESC, "createdAt"));

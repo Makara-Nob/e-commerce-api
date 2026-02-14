@@ -130,6 +130,10 @@ public class AuthServiceImpl implements AuthService {
         if (request.getPosition() != null) {
             user.setPosition(request.getPosition());
         }
+
+        if (request.getPhone() != null) {
+            user.setPhone(request.getPhone());
+        }
     }
 
     private void validateUniqueIdCard(UserEntity user, String newIdCard) {
@@ -165,6 +169,18 @@ public class AuthServiceImpl implements AuthService {
         }
 
         return true;
+    }
+
+    @Override
+    public UserResponseDto getProfile() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        log.debug("Fetching profile for user: {}", username);
+
+        UserEntity user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new NotFoundException("User not found"));
+        
+        return userMapper.mapToDto(user);
     }
 
     private UserResponseDto createUser(RegisterRequestDto registerDto, String operationType) {

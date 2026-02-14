@@ -21,6 +21,7 @@ public class UserResponseDto {
     private String fullName;
     private String position;
     private String profileUrl;
+    private String phone;
     private UserPermission userPermission;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

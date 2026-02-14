@@ -12,12 +12,13 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 @Mapper(componentModel = "spring", uses = { CategoryMapper.class, SupplierMapper.class,
-        com.internal.feature.product.mapper.BrandMapper.class })
+        com.internal.feature.product.mapper.BrandMapper.class, ProductVariantMapper.class })
 public interface ProductMapper {
 
     @Mapping(source = "category", target = "category")
     @Mapping(source = "supplier", target = "supplier")
     @Mapping(source = "brand", target = "brand")
+    @Mapping(source = "variants", target = "variants")
     ProductResponseDto toDto(Product product);
 
     @Mapping(target = "id", ignore = true)

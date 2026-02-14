@@ -10,7 +10,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.Named;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = { ProductMapper.class })
 public interface PromotionMapper {
 
     @Mapping(target = "id", ignore = true)
@@ -27,7 +27,8 @@ public interface PromotionMapper {
     @Mapping(target = "productName", source = "product.name")
     @Mapping(target = "discountType", source = "discountType", qualifiedByName = "discountTypeToString")
     @Mapping(target = "status", source = "status", qualifiedByName = "statusToString")
-    PromotionResponseDto toDto(Promotion entity);
+    @Mapping(source = "product", target = "product")
+    PromotionResponseDto toDto(Promotion promotion);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "product", ignore = true)

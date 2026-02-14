@@ -19,4 +19,8 @@ public class GetAllProductRequestDto {
 
     private String search;
     private StatusData status;
+    private Long categoryId;
+    private Long brandId;
+    private java.math.BigDecimal minPrice;
+    private java.math.BigDecimal maxPrice;
 }

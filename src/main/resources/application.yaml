@@ -1,7 +1,7 @@
 # application.yaml
 
 server:
-  port: 8888
+  port: 5000
   servlet:
     context-path: /
   compression:
@@ -10,7 +10,7 @@ server:
 
 spring:
   application:
-    name: ics-backend
+    name: e-commerce-backend
 
   main:
     allow-bean-definition-overriding: true
@@ -40,7 +40,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/e-commerce
     username: postgres
-    password: Mak#12
+    password: 88889999
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 20
